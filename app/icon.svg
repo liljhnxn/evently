@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="eventlyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d4edd" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#12151b" />
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="url(#eventlyGrad)" stroke-width="1.5" />
+  <!-- Calendar Icon Body -->
+  <rect x="6" y="9" width="20" height="16" rx="3.5" fill="none" stroke="#f3f4f6" stroke-width="1.8" stroke-linejoin="round" />
+  <!-- Top Pins -->
+  <line x1="10" y1="6.5" x2="10" y2="10" stroke="url(#eventlyGrad)" stroke-width="2" stroke-linecap="round" />
+  <line x1="22" y1="6.5" x2="22" y2="10" stroke="url(#eventlyGrad)" stroke-width="2" stroke-linecap="round" />
+  <!-- Header bar -->
+  <line x1="6" y1="13.5" x2="26" y2="13.5" stroke="#f3f4f6" stroke-width="1.5" />
+  <!-- Event Checkmark Dot in Emerald Green -->
+  <circle cx="16" cy="19.5" r="2.2" fill="#10b981" />
+</svg>
+
