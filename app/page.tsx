@@ -21,7 +21,7 @@ import {
   EventItemData,
   EventStatus,
 } from "@/lib/contracts";
-import { Calendar, Compass, Plus, BookmarkCheck, LayoutDashboard } from "lucide-react";
+import { Calendar, Compass, Plus, BookmarkCheck, LayoutDashboard, Globe, ExternalLink, ShieldCheck, Zap } from "lucide-react";
 
 // Initial sample events to display rich UI if contract is fresh with 0 events
 const INITIAL_DEMO_EVENTS: EventItemData[] = [
@@ -210,7 +210,7 @@ export default function Home() {
         setTxState({
           type: "pending",
           title: "Confirming Registration",
-          message: "Transaction broadcasted to Botchain Testnet.",
+          message: "Transaction broadcasted to BOT Chain.",
           txHash,
         });
 
@@ -303,7 +303,7 @@ export default function Home() {
         setTxState({
           type: "pending",
           title: "Mining Event Transaction",
-          message: "Awaiting inclusion on Botchain Testnet block...",
+          message: "Awaiting inclusion on BOT Chain block...",
           txHash,
         });
 
@@ -319,7 +319,7 @@ export default function Home() {
         setTxState({
           type: "success",
           title: "Event Published!",
-          message: `"${data.name}" has been published to Botchain.`,
+          message: `"${data.name}" has been published to BOT Chain.`,
           txHash,
         });
 
@@ -621,26 +621,118 @@ export default function Home() {
             onScrollToCreate={() => setActiveTab("create")}
           />
         )}
+      {/* BOT Chain Ecosystem Section */}
+        <div className="mt-16 mb-4 rounded-3xl bg-gradient-to-br from-surface-card via-surface-card to-surface-raised border border-surface-border p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                <Zap className="w-3.5 h-3.5" />
+                <span>BOT Chain Ecosystem</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                Built natively for BOT Chain
+              </h3>
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                Evently is deployed and verified on BOT Chain (Chain ID: 677). Powered by sub-second finality, 150 Million BOT native supply, and zero-fee participant registration.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-raised hover:bg-surface-border border border-surface-border text-white text-xs sm:text-sm font-semibold transition group shadow-sm"
+              >
+                <Globe className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <span>BOT Chain Website</span>
+                <ExternalLink className="w-3.5 h-3.5 text-text-muted" />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-purple to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-purple-950/40"
+              >
+                <Compass className="w-4 h-4" />
+                <span>BOT Chain Explorer</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-surface-card hover:bg-surface-raised border border-emerald-500/30 text-emerald-400 text-xs font-semibold transition"
+              >
+                <ShieldCheck className="w-4 h-4" />
+                <span>Verified Contract</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-surface-border bg-surface/50 py-8 mt-16 text-center text-xs text-text-muted">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-mono font-bold text-white">Evently</span>
-            <span>— Find your next experience.</span>
+      <footer className="border-t border-surface-border bg-surface/60 py-10 mt-16 text-xs text-text-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-surface-border/60">
+            {/* Logo and info */}
+            <div className="flex items-center gap-3">
+              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-brand-purple to-brand-green flex items-center justify-center text-white font-bold font-mono">
+                E
+              </div>
+              <div>
+                <span className="font-mono font-bold text-white text-base">Evently</span>
+                <p className="text-text-secondary text-xs">On-Chain Event Registration Protocol</p>
+              </div>
+            </div>
+
+            {/* Required Ecosystem Links with BOT Chain Logo/Name */}
+            <div className="flex flex-wrap items-center justify-center gap-5 text-xs">
+              <div className="flex items-center gap-2 text-text-primary font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>BOT Chain (Chain ID: 677)</span>
+              </div>
+              <span className="text-surface-border hidden sm:inline">|</span>
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="text-text-secondary hover:text-white flex items-center gap-1.5 transition font-medium"
+              >
+                <Globe className="w-3.5 h-3.5 text-emerald-400" />
+                <span>BOT Chain Website: https://botchain.ai</span>
+              </a>
+              <span className="text-surface-border hidden sm:inline">|</span>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="text-text-secondary hover:text-white flex items-center gap-1.5 transition font-medium"
+              >
+                <Compass className="w-3.5 h-3.5 text-brand-purple" />
+                <span>BOT Chain Explorer: https://scan.botchain.ai</span>
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-4 text-text-secondary">
-            <span>Network: Botchain Mainnet (Chain ID 677)</span>
-            <span>•</span>
-            <a
-              href="https://scan.botchain.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="text-brand-purple hover:underline"
-            >
-              BotchainScan Explorer
-            </a>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-[11px]">
+            <p>© 2026 Evently. Built for the BOT Chain community.</p>
+            <div className="flex items-center gap-4">
+              <span>Native Token: BOT (150M Supply)</span>
+              <span>•</span>
+              <a
+                href="https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code"
+                target="_blank"
+                rel="noreferrer"
+                className="text-emerald-400 hover:underline font-mono"
+              >
+                Contract: 0xE15A...4a20 (Verified)
+              </a>
+            </div>
           </div>
         </div>
       </footer>

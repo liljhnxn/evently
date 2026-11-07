@@ -117,7 +117,7 @@ export function CreateEventSection({
             Create an Event
           </h2>
           <p className="text-xs sm:text-sm text-text-secondary max-w-2xl mb-8">
-            Host a meetup, workshop, hackathon, or seminar on Botchain Testnet. Set capacity, track registrations on-chain, and manage attendees.
+            Host a meetup, workshop, hackathon, or seminar on BOT Chain. Set capacity, track registrations on-chain, and manage attendees.
           </p>
 
           {/* Success Banner if newly created */}
@@ -266,7 +266,7 @@ export function CreateEventSection({
                 {isCreating ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    Confirming on Botchain...
+                    Confirming on BOT Chain...
                   </>
                 ) : (
                   <>

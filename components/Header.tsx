@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId, useSwitchChain } from "wagmi";
-import { botchainMainnet, botchainTestnet } from "@/lib/chains";
+import { botchainMainnet } from "@/lib/chains";
 import { shortenAddress } from "@/lib/utils";
-import { Calendar, Wallet, LogOut, ChevronDown, CheckCircle2, AlertTriangle, Sparkles } from "lucide-react";
+import { Calendar, Wallet, LogOut, ChevronDown, AlertTriangle, ExternalLink } from "lucide-react";
 
 export function Header() {
-  const { address, isConnected, status } = useAccount();
+  const { address, isConnected } = useAccount();
   const { connectors, connect, isPending: isConnecting } = useConnect();
   const { disconnect } = useDisconnect();
   const chainId = useChainId();
@@ -20,9 +20,7 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  const isMainnet = chainId === botchainMainnet.id;
-  const isTestnet = chainId === botchainTestnet.id;
-  const isSupported = isMainnet || isTestnet;
+  const isCorrectNetwork = chainId === botchainMainnet.id;
 
   const handleConnect = () => {
     const connector = connectors.find((c) => c.name.toLowerCase().includes("metamask")) || connectors[0];
@@ -45,7 +43,7 @@ export function Header() {
                 Event<span className="text-brand-purple">ly</span>
               </span>
               <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                {isTestnet ? "Testnet" : "Mainnet"}
+                BOT Chain
               </span>
             </div>
             <p className="text-xs text-text-secondary hidden sm:block">
@@ -56,12 +54,23 @@ export function Header() {
 
         {/* Network & Wallet Controls */}
         <div className="flex items-center gap-3">
+          {/* Mainnet Explorer quick link on header interface */}
+          <a
+            href="https://scan.botchain.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-card border border-surface-border hover:border-brand-purple/40 text-text-secondary hover:text-white text-xs font-medium transition"
+          >
+            <span>Explorer</span>
+            <ExternalLink className="w-3 h-3 text-brand-purple" />
+          </a>
+
           {mounted && isConnected && (
             <div className="hidden md:flex items-center">
-              {isSupported ? (
+              {isCorrectNetwork ? (
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 text-xs font-medium">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  {isMainnet ? "Botchain Mainnet (677)" : "Botchain Testnet (968)"}
+                  BOT Chain (677)
                 </div>
               ) : (
                 <button
@@ -70,7 +79,7 @@ export function Header() {
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-950/40 border border-amber-800/40 text-amber-300 text-xs font-medium hover:bg-amber-900/40 transition"
                 >
                   <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-                  {isSwitching ? "Switching..." : "Switch to Botchain Mainnet"}
+                  {isSwitching ? "Switching..." : "Switch to BOT Chain"}
                 </button>
               )}
             </div>
@@ -100,7 +109,7 @@ export function Header() {
                       </p>
                     </div>
 
-                    {!isMainnet && (
+                    {!isCorrectNetwork && (
                       <button
                         onClick={() => {
                           switchChain({ chainId: botchainMainnet.id });
@@ -108,10 +117,19 @@ export function Header() {
                         }}
                         className="w-full mt-1.5 flex items-center gap-2 px-3 py-2 text-xs font-medium text-emerald-400 hover:bg-emerald-950/30 rounded-lg transition"
                       >
-                        <Sparkles className="w-4 h-4" />
-                        Switch to Mainnet (677)
+                        Switch to BOT Chain (677)
                       </button>
                     )}
+
+                    <a
+                      href={`https://scan.botchain.ai/address/${address}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full mt-1 flex items-center justify-between px-3 py-2 text-xs font-medium text-text-secondary hover:text-white hover:bg-surface-raised rounded-lg transition"
+                    >
+                      <span>View on Explorer</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
 
                     <button
                       onClick={() => {

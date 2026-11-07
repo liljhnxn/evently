@@ -60,18 +60,14 @@ export function getStatusBadge(status: EventStatus) {
   }
 }
 
-export function getExplorerUrl(chainId?: number): string {
-  if (chainId === 968) return "https://scan.bohr.life";
+export function getExplorerUrl(): string {
   return "https://scan.botchain.ai";
 }
 
-export function getExplorerTxUrl(txHash: string, chainId?: number): string {
-  const base = getExplorerUrl(chainId);
-  return `${base}/tx/${txHash}`;
+export function getExplorerTxUrl(txHash: string): string {
+  return `https://scan.botchain.ai/tx/${txHash}`;
 }
 
-export function getExplorerAddressUrl(address: string, chainId?: number): string {
-  const base = getExplorerUrl(chainId);
-  return `${base}/address/${address}`;
+export function getExplorerAddressUrl(address: string): string {
+  return `https://scan.botchain.ai/address/${address}`;
 }
-

@@ -2,10 +2,10 @@ import { defineChain } from "viem";
 
 export const botchainMainnet = defineChain({
   id: 677,
-  name: "Botchain Mainnet",
+  name: "BOT Chain",
   nativeCurrency: {
     decimals: 18,
-    name: "Botchain Token",
+    name: "BOT Token",
     symbol: "BOT",
   },
   rpcUrls: {
@@ -18,34 +18,8 @@ export const botchainMainnet = defineChain({
   },
   blockExplorers: {
     default: {
-      name: "BotchainScan",
+      name: "BOT Chain Explorer",
       url: "https://scan.botchain.ai",
     },
   },
-  testnet: false,
-});
-
-export const botchainTestnet = defineChain({
-  id: 968,
-  name: "Botchain Testnet",
-  nativeCurrency: {
-    decimals: 18,
-    name: "Bohr",
-    symbol: "BOHR",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.bohr.life"],
-    },
-    public: {
-      http: ["https://rpc.bohr.life"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "BohrScan",
-      url: "https://scan.bohr.life",
-    },
-  },
-  testnet: true,
 });

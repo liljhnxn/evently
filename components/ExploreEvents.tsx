@@ -134,7 +134,7 @@ export function ExploreEvents({
           <p className="text-xs text-text-secondary max-w-sm mx-auto mb-5">
             {searchTerm || statusFilter !== "ALL"
               ? "Try adjusting your search query or status filter."
-              : "Be the first to host an experience on Botchain Testnet!"}
+              : "Be the first to host an experience on BOT Chain!"}
           </p>
           {onOpenCreateModal && (
             <button

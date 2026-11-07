@@ -9,7 +9,7 @@
     "lint": "next lint",
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy:testnet": "hardhat run scripts/deploy.ts --network botchain",
+    "deploy": "hardhat run scripts/deploy.ts --network botchainMainnet",
     "deploy:mainnet": "hardhat run scripts/deploy.ts --network botchainMainnet"
   },
   "dependencies": {

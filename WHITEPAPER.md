@@ -1,22 +1,22 @@
 # Evently: Whitepaper & Project Deck
 
-**Decentralized, Fee-Free Event Management & Registration on Botchain**  
+**Decentralized, Fee-Free Event Management & Registration on BOT Chain**  
 *Version 1.0 — November 2026*  
 
 **Project Links:**
 - **Repository:** [https://github.com/liljhnxn/evently](https://github.com/liljhnxn/evently)
-- **Mainnet Contract (Botchain Mainnet):** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
-- **Mainnet Network:** Botchain Mainnet (Chain ID: `677`, Token: `BOT`)
-- **Mainnet Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
-- **Testnet Contract (Botchain Testnet):** [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
+- **Deployed Contract (BOT Chain):** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
+- **Network:** BOT Chain (Chain ID: `677`, Token: `BOT`)
+- **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
 
 ---
 
 ## 1. Executive Summary
 
-**Evently** is an on-chain event coordination protocol and decentralized application built natively for **Botchain**. Designed for Web3 communities, developer meetups, conferences, and workshops, Evently addresses the critical pitfalls of legacy event ticketing: high platform fees, invasive personal data collection, centralized censorship, and opaque attendee management.
+**Evently** is an on-chain event coordination protocol and decentralized application built natively for **BOT Chain**. Designed for Web3 communities, developer meetups, conferences, and workshops, Evently addresses the critical pitfalls of legacy event ticketing: high platform fees, invasive personal data collection, centralized censorship, and opaque attendee management.
 
-By leveraging smart contract primitives on Botchain, Evently guarantees cryptographic transparency, immutable participant caps, and instant one-click wallet RSVPs without charging platform or transaction fees to attendees.
+By leveraging smart contract primitives on BOT Chain, Evently guarantees cryptographic transparency, immutable participant caps, and instant one-click wallet RSVPs without charging platform or transaction fees to attendees.
 
 ---
 
@@ -33,7 +33,7 @@ Modern event management platforms (Eventbrite, Luma, Meetup) present major frict
 
 ## 3. The Solution: Evently
 
-Evently replaces centralized databases with trustless, gas-efficient smart contracts on Botchain:
+Evently replaces centralized databases with trustless, gas-efficient smart contracts on BOT Chain:
 
 - **Zero-Fee Protocol:** Free event creation and free attendee registration with no platform surcharges.
 - **Privacy-Preserving On-Chain RSVPs:** Users RSVP exclusively via their public wallet address (`MetaMask` or any EIP-1193 wallet). No personal identifiers are collected.
@@ -60,7 +60,7 @@ Evently replaces centralized databases with trustless, gas-efficient smart contr
 
 ### For Attendees:
 - **One-Click RSVP:** Browse active events without connecting a wallet; connect MetaMask only when ready to register.
-- **Tamper-Proof Passes:** Registration confirmed by on-chain receipt visible directly on BohrScan.
+- **Tamper-Proof Passes:** Registration confirmed by on-chain receipt visible directly on BOT Chain Explorer.
 - **Transparent Slots:** Always see real-time available capacity and status badges (`Open`, `Full`, `Cancelled`, `Completed`).
 
 ### For Organizers:
@@ -118,21 +118,21 @@ Evently underwent comprehensive unit testing across Hardhat's in-memory EVM:
 
 ---
 
-## 7. Ecosystem Value for Botchain
+## 7. Ecosystem Value for BOT Chain
 
-1. **Transaction Velocity:** Drives continuous on-chain interactions on Botchain Testnet and Mainnet through RSVPs, event launches, and check-ins.
-2. **Community Onboarding:** Low-barrier, fee-free entry point for Web3 newcomers testing Botchain capabilities and wallet integrations.
-3. **Native Utility:** Provides Botchain protocols and developer teams with an un-censorable native tool to coordinate hackathons, developer calls, and governance summits.
+1. **Transaction Velocity:** Drives continuous on-chain interactions on BOT Chain through RSVPs, event launches, and check-ins.
+2. **Community Onboarding:** Low-barrier, fee-free entry point for Web3 newcomers testing BOT Chain capabilities and wallet integrations.
+3. **Native Utility:** Provides BOT Chain protocols and developer teams with an un-censorable native tool to coordinate hackathons, developer calls, and governance summits.
 
 ---
 
 ## 8. Strategic Roadmap
 
-- **Phase 1 (Completed):** Smart contract deployment & source verification on Botchain Testnet; Next.js dApp launch; full RSVP & organizer flow.
-- **Phase 2 (Current):** Ecosystem partner onboarding, community pilot testing, and co-marketing rollout with Botchain.
+- **Phase 1 (Completed):** Smart contract deployment & source verification on BOT Chain (Chain ID: 677); Next.js dApp launch; full RSVP & organizer flow.
+- **Phase 2 (Current):** Ecosystem partner onboarding, community pilot testing, and co-marketing rollout with BOT Chain.
 - **Phase 3:** Non-transferable On-Chain Attendance Badges (Soulbound Tokens / POAPs) for verified attendees.
 - **Phase 4:** Decentralized file storage integration (IPFS/Arweave) for high-resolution event banners and agendas.
-- **Phase 5:** Mainnet deployment on Botchain.
+- **Phase 5:** Mainnet mobile app and calendar subscription feeds (iCal / Google Calendar sync).
 
 ---
 
@@ -140,6 +140,6 @@ Evently underwent comprehensive unit testing across Hardhat's in-memory EVM:
 
 - **Lead Developer:** liljhnxn
 - **GitHub Repository:** [https://github.com/liljhnxn/evently](https://github.com/liljhnxn/evently)
-- **Verified Mainnet Contract (Chain 677):** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
-- **Verified Testnet Contract (Chain 968):** [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
-
+- **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Verified Smart Contract:** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)

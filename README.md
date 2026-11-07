@@ -1,7 +1,15 @@
 # Evently — On-Chain Web3 Event Registration Application
 
 > **"Find your next experience."**  
-> A lightweight, modern, and beginner-friendly decentralized event registration platform powered by **Botchain Testnet**.
+> A lightweight, modern, and beginner-friendly decentralized event registration platform powered by **BOT Chain**.
+
+---
+
+## 🌐 BOT Chain Ecosystem
+
+- **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Verified Smart Contract:** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
 
 ---
 
@@ -24,27 +32,18 @@
 
 ---
 
-## 🌐 Blockchain Configuration
+## 🌐 Blockchain Configuration (BOT Chain)
 
-### 🚀 Botchain Mainnet (Primary)
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Mainnet |
+| **Network Name** | BOT Chain |
 | **Chain ID** | `677` |
 | **RPC Endpoint** | `https://rpc.botchain.ai` |
 | **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
-| **Currency Symbol** | BOT (Total Supply: 150 Million) |
+| **Official Website** | [https://botchain.ai](https://botchain.ai) |
+| **Native Token** | BOT |
+| **Total Supply** | 150 Million BOT |
 | **Deployed & Verified Contract** | [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code) |
-
-### 🧪 Botchain Testnet
-| Parameter | Value |
-|---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
-| **Currency Symbol** | BOHR |
-| **Deployed & Verified Contract** | [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code) |
 
 ---
 
@@ -103,7 +102,7 @@ Gas-optimized custom errors are used throughout:
 ### 2. Installation
 Clone the repository and install all dependencies:
 ```bash
-git clone <repo-url>
+git clone https://github.com/liljhnxn/evently.git
 cd Evently
 npm install
 ```
@@ -113,15 +112,16 @@ Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
-Populate `.env` with your deployment private key and deployed contract address:
+Populate `.env` with the configuration:
 ```env
-# Blockchain Configuration - Botchain Testnet
-BOTCHAIN_RPC_URL=https://rpc.bohr.life
+# Blockchain Configuration - BOT Chain
+BOTCHAIN_RPC_URL=https://rpc.botchain.ai
+BOTCHAIN_MAINNET_RPC_URL=https://rpc.botchain.ai
 PRIVATE_KEY=your_private_key_without_0x
 
 # Frontend Configuration
-NEXT_PUBLIC_EVENTLY_ADDRESS=0xYourDeployedContractAddress
-NEXT_PUBLIC_CHAIN_ID=968
+NEXT_PUBLIC_EVENTLY_ADDRESS=0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20
+NEXT_PUBLIC_CHAIN_ID=677
 ```
 
 ---
@@ -146,31 +146,20 @@ All unit tests are located in `test/Evently.test.ts`. They comprehensively test:
 Run tests via Hardhat:
 ```bash
 npm run test
-# or
-npx hardhat test
 ```
 
 ---
 
-## 🚢 Smart Contract Deployment to Botchain Testnet
+## 🚢 Smart Contract Deployment & Verification
 
-Ensure your deployer account has testnet BOHR tokens on Botchain Testnet (Chain ID 968).
-
-Deploy the contract:
+Deploy to BOT Chain with minimal gas:
 ```bash
-npx hardhat run scripts/deploy.ts --network botchain
+npm run deploy:mainnet
 ```
 
-The script will:
-1. Verify the deployer balance.
-2. Deploy `Evently.sol`.
-3. Output the deployed contract address and transaction hash.
-4. Provide direct links to [BohrScan](https://scan.bohr.life).
-5. Automatically save the contract address to `lib/deployedAddress.json`.
-
-Update your `.env` file with the deployed address:
-```env
-NEXT_PUBLIC_EVENTLY_ADDRESS=0xYourNewContractAddress
+Verify contract source code on BotchainScan:
+```bash
+npx hardhat verify --network botchainMainnet <CONTRACT_ADDRESS>
 ```
 
 ---
@@ -198,6 +187,11 @@ npm run start
 
 ---
 
+## 🔗 Official Ecosystem Links
+- **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+
+---
+
 ## 📄 License
 MIT
-

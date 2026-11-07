@@ -4,7 +4,7 @@ import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Evently — Find your next experience",
-  description: "Lightweight, beginner-friendly on-chain event registration powered by Botchain Testnet.",
+  description: "Lightweight, beginner-friendly on-chain event registration powered by BOT Chain.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",

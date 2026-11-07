@@ -266,5 +266,5 @@ export interface EventItemData {
 
 export const DEFAULT_CONTRACT_ADDRESS: `0x${string}` =
   (process.env.NEXT_PUBLIC_EVENTLY_ADDRESS as `0x${string}`) ||
-  "0x0000000000000000000000000000000000000000";
+  "0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20";
 
