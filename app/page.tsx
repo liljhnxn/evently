@@ -27,9 +27,9 @@ import { Calendar, Compass, Plus, BookmarkCheck, LayoutDashboard, Globe, Externa
 const INITIAL_DEMO_EVENTS: EventItemData[] = [
   {
     id: BigInt(101),
-    organizer: "0x39a1c8b3f29584288b4a7df49bfb6028a6f874c8" as `0x${string}`,
-    name: "Botchain Developers Summit 2026",
-    description: "Deep dive into Botchain smart contracts, sub-second finality, and decentralized EVM architecture.",
+    organizer: "0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20" as `0x${string}`,
+    name: "BOT Chain Developers Summit 2026",
+    description: "Deep dive into BOT Chain smart contracts, sub-second finality, and decentralized EVM architecture.",
     venue: "Main Hall, Innovation Park & Virtual Stream",
     eventDate: BigInt(Math.floor(Date.now() / 1000) + 86400 * 5),
     maxAttendees: BigInt(150),
@@ -39,7 +39,7 @@ const INITIAL_DEMO_EVENTS: EventItemData[] = [
   },
   {
     id: BigInt(102),
-    organizer: "0x789b917036499806a0a03d6d07d632128b935401" as `0x${string}`,
+    organizer: "0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20" as `0x${string}`,
     name: "Zero-Knowledge Workshop & Hack",
     description: "Hands-on engineering workshop exploring zk-SNARKs and lightweight zero-knowledge circuits.",
     venue: "Silicon Lounge B, Cyber Gateway",
@@ -51,7 +51,7 @@ const INITIAL_DEMO_EVENTS: EventItemData[] = [
   },
   {
     id: BigInt(103),
-    organizer: "0x51c7694f7d4d7a8e2a1b9420b9e8471c9b68a011" as `0x${string}`,
+    organizer: "0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20" as `0x${string}`,
     name: "Global Web3 Founders Roundtable",
     description: "Exclusive quarterly gathering for Web3 protocol builders, founders, and angel syndicates.",
     venue: "The Penthouse, Tech Tower & Discord Stage",
@@ -479,15 +479,33 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mb-10 text-center sm:text-left sm:flex sm:items-end sm:justify-between border-b border-surface-border/60 pb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card border border-surface-border text-xs text-text-secondary mb-3">
-              <span className="w-2 h-2 rounded-full bg-brand-green" />
-              <span>Decentralized Registration on Botchain</span>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card border border-surface-border text-xs text-text-secondary">
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain"
+                />
+                <span>Powered by BOT Chain Mainnet (Chain ID: 677)</span>
+              </div>
+
+              <a
+                href="https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 text-xs font-mono font-medium hover:bg-emerald-900/40 transition"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Contract: 0xE15A...4a20 (Verified)</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
+
             <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
               Simple, Free &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-green">On-Chain</span>
             </h1>
             <p className="mt-3 text-sm sm:text-base text-text-secondary max-w-2xl">
-              Host and attend web3 gatherings without ticket fees or sign-ups. Register with your MetaMask wallet in one click.
+              Host and attend web3 gatherings without ticket fees or sign-ups. Register with your MetaMask wallet on BOT Chain in one click.
             </p>
           </div>
 
@@ -625,17 +643,39 @@ export default function Home() {
         <div className="mt-16 mb-4 rounded-3xl bg-gradient-to-br from-surface-card via-surface-card to-surface-raised border border-surface-border p-6 sm:p-8 lg:p-10 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-xl">
+            <div className="space-y-3 max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                <Zap className="w-3.5 h-3.5" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain"
+                />
                 <span>BOT Chain Ecosystem</span>
               </div>
-              <h3 className="text-2xl font-bold text-white tracking-tight">
-                Built natively for BOT Chain
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-3">
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-8 h-8 rounded-lg object-contain bg-black/40 p-0.5 border border-emerald-500/30"
+                />
+                <span>Built natively for BOT Chain</span>
               </h3>
               <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                Evently is deployed and verified on BOT Chain (Chain ID: 677). Powered by sub-second finality, 150 Million BOT native supply, and zero-fee participant registration.
+                Evently runs on BOT Chain (Chain ID: 677). Powered by sub-second finality, 150 Million BOT native supply, and zero-fee participant registration.
               </p>
+              <div className="pt-1">
+                <span className="text-xs text-text-muted font-mono">
+                  Mainnet Contract:{" "}
+                  <a
+                    href="https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-emerald-400 hover:underline font-semibold"
+                  >
+                    0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20
+                  </a>
+                </span>
+              </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -643,9 +683,13 @@ export default function Home() {
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-raised hover:bg-surface-border border border-surface-border text-white text-xs sm:text-sm font-semibold transition group shadow-sm"
+                className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-raised hover:bg-surface-border border border-surface-border text-white text-xs sm:text-sm font-semibold transition group shadow-sm"
               >
-                <Globe className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-5 h-5 rounded object-contain group-hover:scale-110 transition-transform"
+                />
                 <span>BOT Chain Website</span>
                 <ExternalLink className="w-3.5 h-3.5 text-text-muted" />
               </a>
@@ -654,9 +698,13 @@ export default function Home() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-purple to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-purple-950/40"
+                className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-purple to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-purple-950/40 group"
               >
-                <Compass className="w-4 h-4" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-5 h-5 rounded object-contain group-hover:scale-110 transition-transform"
+                />
                 <span>BOT Chain Explorer</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
@@ -665,9 +713,9 @@ export default function Home() {
                 href="https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-surface-card hover:bg-surface-raised border border-emerald-500/30 text-emerald-400 text-xs font-semibold transition"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-card hover:bg-surface-raised border border-emerald-500/30 text-emerald-400 text-xs font-semibold transition"
               >
-                <ShieldCheck className="w-4 h-4" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
                 <span>Verified Contract</span>
               </a>
             </div>
@@ -681,7 +729,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-surface-border/60">
             {/* Logo and info */}
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-brand-purple to-brand-green flex items-center justify-center text-white font-bold font-mono">
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-green flex items-center justify-center text-white font-bold font-mono">
                 E
               </div>
               <div>
@@ -693,7 +741,11 @@ export default function Home() {
             {/* Required Ecosystem Links with BOT Chain Logo/Name */}
             <div className="flex flex-wrap items-center justify-center gap-5 text-xs">
               <div className="flex items-center gap-2 text-text-primary font-medium">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain"
+                />
                 <span>BOT Chain (Chain ID: 677)</span>
               </div>
               <span className="text-surface-border hidden sm:inline">|</span>
@@ -701,9 +753,13 @@ export default function Home() {
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-secondary hover:text-white flex items-center gap-1.5 transition font-medium"
+                className="text-text-secondary hover:text-white flex items-center gap-2 transition font-medium group"
               >
-                <Globe className="w-3.5 h-3.5 text-emerald-400" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain group-hover:scale-110 transition-transform"
+                />
                 <span>BOT Chain Website: https://botchain.ai</span>
               </a>
               <span className="text-surface-border hidden sm:inline">|</span>
@@ -711,9 +767,13 @@ export default function Home() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-secondary hover:text-white flex items-center gap-1.5 transition font-medium"
+                className="text-text-secondary hover:text-white flex items-center gap-2 transition font-medium group"
               >
-                <Compass className="w-3.5 h-3.5 text-brand-purple" />
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain group-hover:scale-110 transition-transform"
+                />
                 <span>BOT Chain Explorer: https://scan.botchain.ai</span>
               </a>
             </div>
@@ -730,7 +790,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="text-emerald-400 hover:underline font-mono"
               >
-                Contract: 0xE15A...4a20 (Verified)
+                Mainnet Contract: 0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20 (Verified)
               </a>
             </div>
           </div>
