@@ -4,40 +4,76 @@ import * as fs from "fs";
 import * as path from "path";
 
 async function main() {
-  console.log("----------------------------------------------------");
-  console.log("Deploying Evently Smart Contract to Botchain Testnet...");
-  console.log("----------------------------------------------------");
+  const network = await ethers.provider.getNetwork();
+  const chainId = Number(network.chainId);
+  const isMainnet = chainId === 677;
+
+  const networkName = isMainnet ? "Botchain Mainnet" : "Botchain Testnet";
+  const explorerUrl = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
+  const currencySymbol = isMainnet ? "BOT" : "BOHR";
+
+  console.log("====================================================");
+  console.log(`Deploying Evently Smart Contract to ${networkName}...`);
+  console.log("====================================================");
 
   const [deployer] = await ethers.getSigners();
   if (!deployer) {
     throw new Error("No deployer account configured. Check PRIVATE_KEY in .env");
   }
 
-  console.log(`Deployer Account: ${deployer.address}`);
+  console.log(`Deployer Account : ${deployer.address}`);
   const balance = await ethers.provider.getBalance(deployer.address);
-  console.log(`Account Balance: ${ethers.formatEther(balance)} BOHR / ETH`);
+  console.log(`Account Balance  : ${ethers.formatEther(balance)} ${currencySymbol}`);
+
+  // Fetch current live gas fee data
+  const feeData = await ethers.provider.getFeeData();
+  const gasPrice = feeData.gasPrice ?? ethers.parseUnits("20", "gwei");
+  console.log(`Live Gas Price   : ${ethers.formatUnits(gasPrice, "gwei")} Gwei`);
 
   const EventlyFactory = await ethers.getContractFactory("Evently");
-  const evently = await EventlyFactory.deploy();
+
+  // Pre-estimate gas to ensure minimal, accurate gas usage
+  const deployTxData = await EventlyFactory.getDeployTransaction();
+  const estimatedGas = await ethers.provider.estimateGas(deployTxData);
+  const estimatedCost = estimatedGas * gasPrice;
+
+  console.log(`Estimated Gas    : ${estimatedGas.toString()} units`);
+  console.log(`Estimated Cost   : ${ethers.formatEther(estimatedCost)} ${currencySymbol}`);
+  console.log("----------------------------------------------------");
+
+  if (balance < estimatedCost) {
+    throw new Error(
+      `Insufficient balance! Need at least ${ethers.formatEther(estimatedCost)} ${currencySymbol}, but only have ${ethers.formatEther(balance)} ${currencySymbol}`
+    );
+  }
+
+  console.log("Broadcasting deployment transaction with minimal gas...");
+  // Pass exact minimal gas price without inflation
+  const evently = await EventlyFactory.deploy({
+    gasPrice: gasPrice,
+  });
 
   await evently.waitForDeployment();
   const contractAddress = await evently.getAddress();
-
   const deployTx = evently.deploymentTransaction();
-  console.log(`\n🎉 Evently deployed successfully!`);
-  console.log(`Contract Address: ${contractAddress}`);
-  if (deployTx) {
-    console.log(`Transaction Hash: ${deployTx.hash}`);
-  }
-  console.log(`Explorer Link: https://scan.bohr.life/address/${contractAddress}`);
 
-  // Write deployed info to lib/deployedAddress.json for frontend
+  console.log(`\n🎉 Evently successfully deployed to ${networkName}!`);
+  console.log(`Contract Address : ${contractAddress}`);
+  if (deployTx) {
+    console.log(`Transaction Hash : ${deployTx.hash}`);
+  }
+  console.log(`Explorer Link    : ${explorerUrl}/address/${contractAddress}`);
+
+  // Write deployment info to lib/deployedAddress.json
   const deployedInfo = {
     address: contractAddress,
-    network: "Botchain Testnet",
-    chainId: 968,
+    network: networkName,
+    chainId: chainId,
     deployedAt: new Date().toISOString(),
     txHash: deployTx ? deployTx.hash : null,
+    explorer: `${explorerUrl}/address/${contractAddress}`,
+    gasUsed: estimatedGas.toString(),
+    gasPriceGwei: ethers.formatUnits(gasPrice, "gwei"),
   };
 
   const outputPath = path.join(process.cwd(), "lib/deployedAddress.json");

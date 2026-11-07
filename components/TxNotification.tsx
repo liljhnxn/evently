@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Loader2, CheckCircle2, AlertCircle, ExternalLink, X } from "lucide-react";
+import { getExplorerTxUrl } from "@/lib/utils";
 
 export interface TxState {
   type: "idle" | "pending" | "success" | "error";
@@ -58,12 +59,12 @@ export function TxNotification({ txState, onClose }: TxNotificationProps) {
             {txState.txHash && (
               <div className="pt-1.5">
                 <a
-                  href={`https://scan.bohr.life/tx/${txState.txHash}`}
+                  href={getExplorerTxUrl(txState.txHash)}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1 text-xs font-semibold text-brand-purple hover:underline"
                 >
-                  View on BohrScan Explorer
+                  View on BotchainScan Explorer
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>

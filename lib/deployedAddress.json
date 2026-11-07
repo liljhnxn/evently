@@ -1,8 +1,10 @@
 {
-  "address": "0xbDcBdb48271D430f3051bABA75934fB928A61171",
-  "network": "Botchain Testnet",
-  "chainId": 968,
-  "deployedAt": "2026-11-02T17:07:26.000Z",
-  "txHash": "0x2c3c2e6ec923393cef901e0e378925d736913bf0a28bf414d08895c6c40b9bb3"
+  "address": "0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20",
+  "network": "Botchain Mainnet",
+  "chainId": 677,
+  "deployedAt": "2026-11-07T06:14:01.290Z",
+  "txHash": "0x7ab0b38b38b84bc4e4c4e1decd8db4d4e514780d60f290821fc5cd0eb1213de2",
+  "explorer": "https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20",
+  "gasUsed": "1485591",
+  "gasPriceGwei": "20.0"
 }
-

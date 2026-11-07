@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { PlusCircle, Calendar, MapPin, Users, FileText, CheckCircle2, ExternalLink, Loader2, AlertCircle } from "lucide-react";
+import { getExplorerTxUrl } from "@/lib/utils";
 
 interface CreateEventSectionProps {
   isConnected: boolean;
@@ -129,7 +130,7 @@ export function CreateEventSection({
                     Event Created Successfully!
                   </h4>
                   <p className="text-xs text-emerald-300/90">
-                    &ldquo;{successInfo.name}&rdquo; is now live on the Botchain Testnet ledger.
+                    &ldquo;{successInfo.name}&rdquo; is now live on the Botchain ledger.
                   </p>
                   {successInfo.eventId && (
                     <p className="text-xs text-text-secondary">
@@ -142,12 +143,12 @@ export function CreateEventSection({
                   {successInfo.txHash && (
                     <div className="pt-2">
                       <a
-                        href={`https://scan.bohr.life/tx/${successInfo.txHash}`}
+                        href={getExplorerTxUrl(successInfo.txHash)}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 underline"
                       >
-                        View on BohrScan Explorer
+                        View on BotchainScan Explorer
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>

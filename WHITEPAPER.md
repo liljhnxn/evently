@@ -5,9 +5,10 @@
 
 **Project Links:**
 - **Repository:** [https://github.com/liljhnxn/evently](https://github.com/liljhnxn/evently)
-- **Deployed Contract (Botchain Testnet):** [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
-- **Network:** Botchain Testnet (Chain ID: `968`)
-- **Block Explorer:** [https://scan.bohr.life](https://scan.bohr.life)
+- **Mainnet Contract (Botchain Mainnet):** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
+- **Mainnet Network:** Botchain Mainnet (Chain ID: `677`, Token: `BOT`)
+- **Mainnet Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Testnet Contract (Botchain Testnet):** [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
 
 ---
 
@@ -139,5 +140,6 @@ Evently underwent comprehensive unit testing across Hardhat's in-memory EVM:
 
 - **Lead Developer:** liljhnxn
 - **GitHub Repository:** [https://github.com/liljhnxn/evently](https://github.com/liljhnxn/evently)
-- **Verified Contract:** `0xbDcBdb48271D430f3051bABA75934fB928A61171`
-- **Explorer Verification:** [https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
+- **Verified Mainnet Contract (Chain 677):** [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code)
+- **Verified Testnet Contract (Chain 968):** [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code)
+

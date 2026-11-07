@@ -481,7 +481,7 @@ export default function Home() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card border border-surface-border text-xs text-text-secondary mb-3">
               <span className="w-2 h-2 rounded-full bg-brand-green" />
-              <span>Decentralized Registration on Botchain Testnet</span>
+              <span>Decentralized Registration on Botchain</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
               Simple, Free &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-green">On-Chain</span>
@@ -631,15 +631,15 @@ export default function Home() {
             <span>— Find your next experience.</span>
           </div>
           <div className="flex items-center gap-4 text-text-secondary">
-            <span>Network: Botchain Testnet (Chain ID 968)</span>
+            <span>Network: Botchain Mainnet (Chain ID 677)</span>
             <span>•</span>
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="text-brand-purple hover:underline"
             >
-              BohrScan Explorer
+              BotchainScan Explorer
             </a>
           </div>
         </div>

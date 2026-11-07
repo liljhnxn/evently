@@ -24,8 +24,19 @@
 
 ---
 
-## 🌐 Blockchain Configuration (Botchain Testnet)
+## 🌐 Blockchain Configuration
 
+### 🚀 Botchain Mainnet (Primary)
+| Parameter | Value |
+|---|---|
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Currency Symbol** | BOT (Total Supply: 150 Million) |
+| **Deployed & Verified Contract** | [`0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20`](https://scan.botchain.ai/address/0xE15AF4D0AE06109bB2F373a5E0D8f43106224a20#code) |
+
+### 🧪 Botchain Testnet
 | Parameter | Value |
 |---|---|
 | **Network Name** | Botchain Testnet |
@@ -33,6 +44,7 @@
 | **RPC Endpoint** | `https://rpc.bohr.life` |
 | **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
 | **Currency Symbol** | BOHR |
+| **Deployed & Verified Contract** | [`0xbDcBdb48271D430f3051bABA75934fB928A61171`](https://scan.bohr.life/address/0xbDcBdb48271D430f3051bABA75934fB928A61171#code) |
 
 ---
 
